@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0e0e14;
+  --bg-card: #16161e;
+  --bg-elevated: #1c1c26;
+  --bg-hover: #202030;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(139,92,246,0.5);
+  --accent: #800080;
+  --accent-dim: rgba(139,92,246,0.12);
+  --accent-bright: #a78bfa;
+  --text-primary: #eeeef5;
+  --text-secondary: #8888a8;
+  --text-muted: #44445a;
+  --green: #22c55e;
+  --red: #f87171;
+  --amber: #fbbf24;
+}
+
+/* Force dark background — prevents Tailwind base from going white */
+html,
+body {
+  background-color: #0e0e14 !important;
+  color: #eeeef5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Dot grid */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Typography helpers */
+.font-display    { font-family: 'Nunito', sans-serif; }
+.font-mono-code  { font-family: 'JetBrains Mono', monospace; }
+.font-orbitron   { font-family: 'Nunito', sans-serif; font-weight: 900; }
+.font-rajdhani   { font-family: 'Inter', sans-serif; }
+.font-mono-tech  { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+
+/* Section label */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Accent line */
+.accent-line {
+  height: 2px;
+  width: 32px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Price */
+.price {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-bright);
+}
+
+/* Tag pill */
+.tag-pill {
+  background: rgba(139,92,246,0.1);
+  color: #a78bfa;
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Spec rows */
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+}
+.spec-row:last-child { border-bottom: none; }
+
+/* Image overlay gradient */
+.img-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(14,14,20,0.9) 0%,
+    rgba(14,14,20,0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* Blink for status dot */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.status-dot { animation: blink 2s ease-in-out infinite; }
+
+/* Scan line — disabled in new style */
+.scan-line { display: none; }
+.flicker    { /* no-op */ }
+.neon-blue  { color: var(--accent-bright); }
+.neon-pink  { color: #f472b6; }
+.neon-purple{ color: var(--accent); }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #0e0e14; }
+::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
